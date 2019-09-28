@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3>条件分岐</h3>
+			<p>
+				次は条件分岐を学びましょう。<br />
+			</p>
+			<h4>条件文</h4>
+			<p>
+				プログラミングでは処理は常に同じではなく、様々に変化します。<br />
+				条件ごとに処理を変化させたい場合はif文またはSwitch文を使用します。<br />
+				<h5>記述例１：</h5>
+				var a = 10;<br />
+				if (a > 5) {<br />
+					　　// ()の条件がtrueの場合に実行される<br />
+				} else {<br />
+					　　// ()の条件がfalseの場合に実行される<br />
+				}<br />					
+				<h5>記述例２：</h5>
+				var a = 3;<br />
+				if (a == 1) {<br />
+					　　// aの変数の中身が1の場合に実行される<br />
+				} else if (a == 2) {<br />
+					　　// aの変数の中身が2の場合に実行される<br />
+				} else {<br />					
+					　　// aの変数の中身が1と2以外に実行される<br />
+				}<br />				
+				<h5>記述例３：</h5>
+				var a = 3;<br />
+				switch(a) {<br />
+					　　case 1:<br />
+					　　	　　// aの変数の中身が1の場合に実行される<br />
+					　　	　　break;<br />
+					　　case 2:<br />
+					　　	　　// aの変数の中身が2の場合に実行される<br />
+					　　	　　break;<br />
+					　　default:<br />
+					　　	　　// aの変数の中身が1と2以外に実行される<br />
+					　　	　　break;<br />
+				}<br />
+				※caseには定数を指定し条件は記述できない。
+		</p>
+			<h4>比較演算子</h4>
+			<p>
+				判定を行う場合は比較演算子を使用します。<br />
+				2つの値を比較する演算子で、評価結果で真偽値を返します。<br />
+				==（等しい）<br />
+				!=（等しくない）<br />
+				>（大きい）<br />
+				>=（以上）<br />
+				<（小さい）<br />
+				<=（以下）<br />
+			</p>
+			<h4>同値演算子と等値演算子</h4>
+			<p>
+				演算子には同値演算子(===)と等値演算子(==)があります。<br />
+				同値演算子はデータ型も含めて比較判定を行います。<br />
+				例: 1 === '1' 結果: false<br />
+				等値演算子は異なる型のプリミティブ値を比較する際には<br />
+				数値に型変換を行なってから比較判定を行います。<br />
+				例: 1 == '1'  結果: true<br />
+			</p>
+			<h4>算術演算子</h4>
+			<p>
+				数値を計算して比較する際は以下を使用します。<br />
+				「加算」：「+」    1 + 1 = 2<br />
+				「減算」：「–」    1 - 1 = 0<br />
+				「乗算」：「*」    3 * 3 = 9<br />
+				「除算」：「/」    4 / 2 = 2<br />
+				「剰余」：「%」    5 % 3 = 2<br />
+			</p>
+			<h4>論理演算子</h4>
+			<p>
+				複数の条件指定して比較する際は以下を使用します。<br />
+				「and（&&）」   <br />
+				「or（||）」    <br />
+				「not（!）」    <br />
+				<h5>記述例：</h5>
+				var num = 5;<br />  
+				if(num >= 0 && num < 10) {<br />
+					　　// 0以上10より小さい場合に実行される<br />				 
+				} else {<br />				 
+					　　// 10以上の場合に実行される<br />				 
+				}<br />				
+			</p>
+		</div>
+		<div id="main">
+			<h3>ループ処理</h3>
+			<p>
+				同じ処理を何度も繰り返す時はループ文で記述します。<br />
+			</p>
+			<h4>for文</h4>
+			<p>
+				for文は以下の3つの部品から構成されます <br />
+				・カウント変数<br />
+				・ループの条件<br />
+				・カウント変数の変化<br />
+				記述例：<br />
+				for (var count = 0; count < 10; count++) {<br />
+					　　// カウント変数が10になったら処理が終了<br />
+				}<br />
+			</p>
+			<h4>for...in文</h4>
+			<p>
+				オブジェクトにあるプロパティまたは配列を反復する<br />
+				記述例：</br>
+				var obj = {"fruits1":"みかん","fruits2":"リンゴ"};<br />
+				for (var i in obj) {<br />
+					　　// i = fruits1 obj[i] = みかん<br />
+					　　// i = fruits2 obj[i] = リンゴ<br />
+				}<br />
+			</p>
+
+			<h4>break 文</h4>
+			<p>
+				反復の途中で処理から抜ける<br />
+				記述例：</br>
+				var cnt = 0; </br>
+				for (var i = 0; i < 5; i++) {<br />
+					　　if (i == 3) {</br>
+						　　	　　// iが3の時に反復を抜ける<br />
+						　　	　　break;</br>
+					　　}</br>
+					　　cnt += i;</br>		
+				}<br />
+				alert(cnt);<br />
+			</p>
+
+			<h4>continue 文</h4>
+			<p>
+				現在の反復は途中終了し、次のループ処理を継続する<br />
+				記述例：</br>
+				var cnt = 0; </br>
+				for (var i = 0; i < 5; i++) {<br />
+					　　if (i == 2 || i == 3) {</br>
+						　　// iが2の時と3の時は次の処理をしない<br />
+						　　continue;</br>
+					　　}</br>
+					　　cnt += i;</br>		
+				}<br />
+				alert(cnt);<br />
+			</p>
+		</div>
+
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

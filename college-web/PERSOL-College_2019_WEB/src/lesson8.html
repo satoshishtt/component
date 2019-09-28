@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript" src="js/kenshu_lesson8.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3 id="title"></h3>
+			<p>
+				CSSはカスケーディング・スタイル・シートの略です。<br />
+				デザイン専用のマークアップ言語になります。<font color="red">解説１を参照</font><br />
+				記述は外部ファイルかstyleタグの中にp {color:blue;}といった<br />
+				記述をします。<font color="red">解説２を参照</font><br />
+			</p>
+			<h4>代表的なスタイル</h4>
+			<p>
+				代表的なスタイルをみてみましょう。<br />
+			</p>
+			<div id="qa1">
+				<form id="form" name="form" action="*" method="post">
+					<table>
+						<thead>
+							<tr>
+								<th>プロパティ</th>
+								<th>説明</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>color</td>
+								<td>文字色を指定する</td>
+							</tr>
+							<tr>
+								<td>background</td>
+								<td>背景色を指定をする</td>
+							</tr>
+							<tr>
+								<td>font</td>
+								<td>フォントに関連の指定を行う</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>幅を指定する</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>高さを指定する</td>
+							</tr>
+							<tr>
+								<td>display</td>
+								<td>要素のブロック・インラインを指定する</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			</br>
+			<div>
+				<h5>CSSでのスタイルの適用</h5>
+				<p>
+					要素名 {プロパティ名:値;}</br>
+					記述例： </br>
+					#tableId2 {color : blue ;}<p>ここだ<p></br>
+					下記テーブルのカラーを変更しましょう。</br>
+				</p>
+				<textarea id="example2" rows="3" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_style_build('example2');" value="スクリプト実行">
+					<input type="button" onClick="answer_style_reset_1('qa3','tableId2');" value="実行結果をリセット">
+				</div>
+			</div>
+			<div id="qa3">
+				<table id="tableId2">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>国</th>
+							<th>英語</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>日本</td>
+							<td>JAPAN</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>アメリカ</td>
+							<td>America</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>中国</td>
+							<td>CHAINA</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<div>
+				<h4>CSSのセレクタ</h4>
+				<p>
+					下記のスタイルの記述をみてみましょう。</br>
+					#tableId2 {</br>
+						　color : blue ;</br>
+					}</br>
+					{}の始めの#tableId2の部分はセレクタといいます。</br>
+					ここにどの部分に適用したいのかを記述します。</br>
+					#はIDに対して適用するという意味を持ち、この場合は</br>
+					tableId2のIdを持つ属性に対しての命令となります。</br>
+				</p>
+				<h4>一括設定と文脈セレクタの記述</h4>
+				<p>
+					下記のスタイルの記述をみてみましょう。</br>
+					div,p {</br>
+						　color : blue ;</br>
+					}</br>
+					div,pはカンマを使用していますこれは一括設定を指し</br>
+					両方の要素に対して同じスタイルを適用する場合に用います。</br>
+					</br>
+					次は似たような記述ですが少し違います。</br>
+					div p {</br>
+						　color : blue ;</br>
+					}</br>
+					div pは半角スペースを使用していますこれは文脈セレクタと呼び</br>
+					divの中に囲まれている要素pに対してスタイルを適用する場合に用います。</br>
+				</p>
+				<h5>代表的なセレクタ</h5>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>種類</th>
+							<th>記述例</th>
+							<th>説明</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>ID</td>
+							<td>#table {color:blue;}</td>
+							<td>tableのidを持つ要素へ適用 <br/>書式は#を先頭</td>
+						</tr>
+						<tr>
+							<td>CLASS</td>
+							<td>.sample {color:blue;}</td>
+							<td>.sampleの属性クラスを持つ要素へ適用 <br/>書式は.を先頭</td>
+						</tr>
+						<tr>
+							<td>要素</td>
+							<td>div {color:blue;}</td>
+							<td>div要素へ適用 <br/>書式はタグ名と一緒</td>
+						</tr>
+						<tr>
+							<td>属性</td>
+							<td>input[value="200"] {color:blue;}</td>
+							<td>input要素かつvalueが200の要素に適用 <br/>書式は[属性][属性=値]などで記述</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="sub">
+			<div class="section">
+				<h3>解説１</h3>
+				CSSやHTMLは背景や見出しなど文書構造を定義するマークアップ言語です。</br>
+				JavaScriptはプログラミング言語でマークアップと異なる点は</br>
+				「順次」「選択」「繰り返し」といった命令文が記述できるのかが違いとなります。</br>
+			</div>
+			</br>
+			<div class="section" style="font-size:80%">
+				<h3>解説２</h3>
+				<img border="0" src="images/style_1.png" width="400" height="250" alt="style_1">
+			</div>
+			</br>
+			<div class="section">
+				<h3>練習２</h3>
+				<h2><font color="red">練習２を実践</font>　時間は５分</h2>
+				下記テーブルセル(td)の縦と横の長さを調節しなさい</br>
+				条件：CSSでのスタイルの適用</br>
+				　　　縦 50px 横 200px</br>
+				　　　適用範囲はidはtableId4のテーブル</br>
+				<div id="pc2">
+					<table id="tableId4" border="1">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>国</th>
+								<th>英語</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>日本</td>
+								<td>JAPAN</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>アメリカ</td>
+								<td>America</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>中国</td>
+								<td>CHAINA</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<textarea id="practice2" rows="4" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_style_build('practice2');" value="スクリプト実行">
+					<input type="button" onClick="answer_build_2('tableId4');" value="回答結果を実行">
+					<input type="button" onClick="answer_style_reset();" value="実行結果をリセット">
+				</div>
+			</div>
+			<div class="section">
+				<h3>練習３</h3>
+				<h2><font color="red">練習３を実践</font>　時間は５分</h2>
+				下記リストの「花子」の文字サイズを変えなさい。</br>
+				条件：CSSでのスタイルの適用</br>
+				　　　文脈セレクタを使用する</br>
+				　　　スタイルはfont-size:18px;を使用する</br>
+				</br>
+				<div id="pc3">
+					<ul>
+						<li>
+							<div>パーソル<font>太郎</font></div>
+						</li>
+						<li>
+							<span>パーソル<font>花子</font></span>
+						</li>
+						<li>
+							<span>パーソル<strong>次郎</strong></span>
+						</li>
+					</ul>
+				</div>
+				<script type="text/javascript" language="javascript">
+					document.write(html_replace($("#pc3").html()));
+				</script>
+				<br>
+				<textarea id="practice3" rows="4" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_style_build('practice3');" value="スクリプト実行">
+					<input type="button" onClick="answer_build_3();" value="回答結果を実行">
+					<input type="button" onClick="answer_style_reset();" value="実行結果をリセット">
+				</div>
+			</div>
+		</div>  
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript" src="js/kenshu_lesson10.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3 id="title"></h3>
+			<p>
+				jQueryとはオープンソースのライブラリで使用すると短くシンプルなプログラムの記述が可能です。<br />
+				2006年にJhon Resigが発表し現在は「jQuery Team」が開発と保守を行っています。<br />
+			</p>
+			<div>
+				<h4>使用方法</h4>
+				<p>
+					使用方法は２通りあります。<br />
+					一つはサイト<a href="https://jquery.com/download/" target="_blank">https://jquery.com/download/</a>
+					からダウンロードしファイルを配置する方法。<br />
+					もう一つはでURLアドレスで使用する方法。<font color="red">解説１を参照</font><br />
+					<h2>記述の仕方</h2>
+					実際にコードを記述するときはjQueryの関数やプロパティが入っているオブジェクトの<br />
+					$()またはjQuery()と記述して処理を書きます。
+				</p>
+			</div>
+			<div>
+				<h4>セレクタの使い方</h4>
+				<p>
+					セレクタは任意のエレメントを、DOM ツリーから選び出すための書式です。<br />
+					jQueryのセレクタはCSSセレクタが基本となっていますのですぐわかると思います。<br />
+				</p>
+				<h2>基本のセレクタ</h2>
+				<div id="ex1">
+					<table class="table" id="table_1">
+						<thead>
+							<tr id="tr_0">
+								<th id="td_0A">セレクタ</th>
+								<th id="td_0B">説明</th>
+								<th id="td_0C">記述例</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="tr_1">
+								<td id="td_1A" class="abc">.class</td>
+								<td id="td_1B">クラス名を持つ全ての要素を取得</td>
+								<td id="td_1C">$(".abc")</td>
+							</tr>
+							<tr id="tr_2">
+								<td id="td_2A"><span>element</span></td>
+								<td id="td_2B">要素名を持つ全ての要素を取得</td>
+								<td id="td_1C">$("span")</td>
+							</tr>
+							<tr id="tr_3">
+								<td id="td_3A" efg="111">#id</td>
+								<td id="td_3B">idを持つ唯一の要素を取得</td>
+								<td id="td_1C">$("#td_3A")</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="ex_r1">
+					<h5><font color="red">例題１を参照しセレクタを記述</font></h5>
+					<textarea id="example1" rows="1" cols="84" >$("").text();</textarea>
+					<br>
+					<div>
+						<input type="button" onClick="practice_build('example1');" value="スクリプト実行">
+					</div>
+					<div id="example1_result" size="120px">
+						実行結果を表示
+					</div>
+					</br>
+				</div>
+			</div>
+			<div>
+				<h2>属性(attribute)のセレクタ</h2>
+				<div id="ex2">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>セレクタ</th>
+								<th>説明</th>
+								<th>記述例</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>[attribute]</td>
+								<td>指定されたattributeを持つ要素</td>
+								<td>$("[efg]")</td>
+							</tr>
+							<tr>
+								<td>[attribute='value']</td>
+								<td>attributeの値がvalueと一致する要素</td>
+								<td>$("[id=td_1A]")</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="ex_r2">
+					<h5><font color="red">例題１を参照しセレクタを記述</font></h5>
+					<textarea id="example2" rows="1" cols="84" >$("").text();</textarea>
+					<br>
+					<div>
+						<input type="button" onClick="practice_build('example2');" value="スクリプト実行">
+					</div>
+					<div id="example2_result" size="120px">
+						実行結果を表示
+					</div>
+					</br>
+				</div>
+			</div>
+      <h4>イベント処理</h4>
+      <h2>$.on()メソッドによるイベント処理</h2>
+      <p>
+        $.on()メソッドを使用した基本的な記述方法は以下のようになります。<br />
+        <b>$('要素').on('イベント名', function(){ 処理 })</b><br />
+        イベントリスナの記述方法に似ているので覚えやすいですね。<br />
+        実際の記述例は解説２のようになります。
+      </p>
+      </p>
+      <h5>複数のイベントの記述の仕方</h5>
+      <p>
+        onメソッドを使って複数の別々のイベントを設定すると以下のようになります。<br />
+        記述の仕方が少し変わりましたね。<br />
+        <b>
+          $('要素').on({<br />
+          'イベント名':function(){ 処理 },<br />
+          'イベント名':function(){ 処理 }<br />
+        });<br />
+        </b>
+        イベントハンドラの時と比べると少しコードの量が減ったことがわかると思います。<br />
+        実際の記述例は解説３を見てみましょう。
+      </p>
+			<h4>練習</h4>
+			<form id="form" name="form" action="*" method="post">
+				<h2><font color="red">練習１</font>　時間は５分</h2>
+				<div id="qa1">
+					<ul>
+						<li>
+							<label size="20" for="name">名前</label>：
+							<input type="text" id="name" name="name"value="添付　三朗" size="20">
+						</li>
+						<li>
+							<label for="mail">メールアドレス</label>：
+							<input type="text" id="mail" name="mail" value="saburo.temp@example.com" size="40">
+						</li>
+						<li>
+							<label for="tel">電話番号</label>：
+							<input type="text" id="tel" name="tel" value="09077779999" size="15">
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h5>メールアドレスのラベルテキストを取得しなさい。<font color="red">練習１ HTMLを参照</font></h5>
+					<textarea id="practice1" rows="3" cols="84" ></textarea>
+					<br>
+					<div>
+						<input type="button" onClick="practice_build('practice1');" value="スクリプト実行">
+					</div>
+					<div id="practice1_result" size="120px">
+						実行結果を表示
+					</div>
+					</br>
+				</div>
+        <h2><font color="red">練習2</font>　時間は１０分</h2>
+        <h5>
+          onメソッドを使って以下の文字にマウスポインタが乗ったときに色が変更され、<br />
+          クリックされたときアラートが出る処理を記述しなさい。
+        </h5>
+        <br />
+        <div id="exercises3">
+          <p id="on_practice"><b>練習問題です。色を変えてアラートを出してね。</b></p>
+        </div>
+        <br />
+        <p>
+          文字の要素は以下のとおりです。
+          <script type="text/javascript" language="javascript">
+            document.write(html_replace($("#exercises3").html()));
+          </script>
+        </p>
+        <textarea id="practice3" rows="5" cols="84" ></textarea>
+        <br>
+        <div>
+          <input id="on_practice_button" type="button" onClick="practice_build('practice3');" value="スクリプト実行">
+          <input id="reset_button" type="button" value="処理のリセット">
+        </div>
+			</form>
+		</div>
+
+		<div id="sub">
+			<div class="section" style="font-size:80%">
+				<h3>解説１</h3>
+				<img border="0" src="images/script_1.png" width="500" height="250" alt="/script_1">
+			</div>
+			<div class="section" style="font-size:80%">
+				<h3>例題１ HTML</h3>
+				<script type="text/javascript" language="javascript">
+					document.write(html_replace($("#ex1").html()));
+				</script>
+			</div>
+      <div class="section" style="font-size:80%;">
+        <h3>解説２</h3>
+        <br />
+        <input id="on_ex1" type="button" value="ボタン" />
+        <p>
+          &lt;script&gt;<br />
+          $("#on_ex1").on("click", function() {<br />
+            alert("onメソッドの例だよ！！");<br />
+          });<br />
+          &lt;/script&gt;
+        </p>
+      </div>
+      <div class="section" style="font-size:80%;">
+        <h3>解説３</h3>
+        <br />
+        <p id="on_ex2">onメソッドで複数のイベントを設定した例です</p>
+        <p>
+          &lt;script&gt;<br />
+          $("#on_ex2").on({<br />
+            "mouseenter":function(){$("#on_ex2").css("color", "red");},<br />
+            "mouseleave":function(){$("#on_ex2").css("color", "blue");}<br />
+          });<br />
+          &lt;/script&gt;
+        </p>
+      </div>
+			<div class="section" style="font-size:80%">
+				<h3>練習１ HTML</h3>
+				<script type="text/javascript" language="javascript">
+					document.write(html_replace($("#qa1").html()));
+				</script>
+			</div>
+		</div>
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

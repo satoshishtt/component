@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3 id="title"></h3>
+			<p>
+				関数はJavaScriptの基本的な構成要素のひとつで<br />
+				タスクや値計算などを実行する文の集まりです。<br />
+			</p>
+			<h4>関数の宣言の仕方</h4>
+			<p>
+				関数の定義はfunction キーワードと以下を使用し宣言します。 <br />
+				・関数の名前<br />
+				・引数<br />
+				・波括弧<br />
+				記述例１：引数なし<br />
+				function sample() {<br />
+					　　alert("hello!");<br />
+				}<br />
+				記述例２：引数あり<br />
+				function sample(year, month) {<br />
+					　　return year + ":" + month;<br />
+				}<br />
+			</p>
+			<h4>関数の呼び出し</h4>
+			<div>
+				<p>
+					関数の呼び出しは名前に()を付けて呼び出します。<br />
+					記述例：</br>
+					sample();</br>
+					実際に記述例１を宣言して呼び出してみましょう。</br>
+				</p>
+				<textarea id="example1" rows="6" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('example1');" value="スクリプト実行">
+				</div>
+				</br>
+			</div>
+			<h4>関数宣言の優先順位</h4>
+			<div>
+				<p>
+					もし関数の宣言で同じ名前を使用したらどうなるでしょうか。</br>
+					関数の宣言は同じ名前が宣言された場合最後に宣言された関数が有効になります。</br>
+				</p>
+				<div>
+					<h2>ここで<font color="red">練習１を実践</font>　時間は５分</h2>
+				</div>
+				</br>
+			</div>
+			<h4>無名関数と呼び出し</h4>
+			<div>
+				<p>
+					名前を付けない関数を無名関数と呼びます。</br>
+					名前を付けずに、関数を変数に代入し使用することができます。</br>
+					記述例：<br />
+					var example = function () {<br />
+					　　alert("thank you!");<br />
+					};<br />
+					example();<br />
+					無名関数を呼び出してみましょう。</br>
+				</p>
+				<textarea id="example3" rows="6" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('example3');" value="スクリプト実行">
+				</div>
+				</br>
+			</div>
+		</div>
+		<!-- 右側 -->
+		<div id="sub">
+			<div class="section">
+				<h3>練習１</h3>
+				<br>
+				function関数の名前が一緒な関数を宣言し後に記述された方が有効かを確かめなさい。</br>
+				条件：実行はalert()を使用する</br>
+				<textarea id="practice1" rows="12" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('practice1');" value="スクリプト実行">
+				</div>
+			</div>
+		</div>  
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

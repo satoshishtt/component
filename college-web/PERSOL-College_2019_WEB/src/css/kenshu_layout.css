@@ -1,0 +1,23 @@
+/* ========LAYOUT======== */
+#menu font {
+        font-size:6px;
+}
+#top {
+   width:1270px;
+}
+#menu li {
+    height:3.5em;
+}
+#menu li a {
+   height:3.5em;
+   width:210px
+}
+#main {
+   width:610px;
+}
+#sub {
+   width:610px;
+}
+#contents {
+   background:#FFF;
+}

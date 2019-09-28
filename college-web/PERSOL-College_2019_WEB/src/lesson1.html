@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3 id="title"></h3>
+			<p>
+				まずは変数の宣言とJSONを学びましょう。<br />
+			</p>
+			<h4>変数の宣言</h4>
+			<p>
+				プログラミングではデータを保持するために変数を使用します。<br />
+				JavaScriptでは「var」を変数の前に記述し宣言します。<br />
+				記述例：<br />
+				var test = "パーソル";
+				<h5>データ型</h4>
+				変数にはデータ型が有りますがJavaScriptでは以下の型を基本的に使います。<br />
+				・数値<br />
+				・文字列<br />
+				・論理型<br />
+				・配列<br />
+				・オブジェクト<br />
+				<font color="red">
+					上記以外に特殊な型としてundefinedがあります。<br />
+					undefinedは定義されていないプロパティを意味します。<br />
+				</font>
+			</p>
+			<h4>配列型を作成</h4>
+			<p>
+				配列型の宣言の仕方は<br />
+				var ary = new Array();で記述します。<br />
+				情報を中に入れる場合は<br />
+				ary[0] = "みかん";<br />
+				ary[1] = "リンゴ";<br />
+				と記述します。<br />
+				配列はメソッドでも追加できary.push("バナナ");で順番に格納できます。<br />
+				console.log();を使用して変数の中身を実際にみましょう。<font color="red">解説を参照</font></br>
+				<textarea id="example1" rows="6" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('example1');" value="スクリプト実行">
+				</div>
+				</br>
+			</p>
+			<h4>オブジェクト型を作成</h4>
+			<p>
+				オブジェクト型の宣言の仕方は<br />
+				var obj = new Object();で記述します。<br />
+				情報を中に入れる(プロパティを追加する)場合は<br />
+				obj["fruits1"] = "みかん";<br />
+				obj["fruits2"] = "リンゴ";<br />
+				と記述します。<br />
+				オブジェクトは[]を使用しなくてもobj.fruits3 = "バナナ";でも記述できます。</br>
+				console.log();を使用して変数の中身を実際にみましょう。</br>
+				<textarea id="example2" rows="6" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('example2');" value="スクリプト実行">
+				</div>
+				</br>
+			</p>
+			<h4>JSONでの表記</h4>
+			<p>
+				JSONは「JavaScript Object Notation」の略で「ジェイソン」といいます。<br />
+				配列やオブジェクトをテキストフォーマットで記述できる特徴があります。<br />
+				<br />
+				配列はnew Array();で宣言していましたが<br />
+				以下のようにJSONでは角括弧 [ ] とカンマで記述できます<br />
+				var ary = ["みかん","リンゴ"];<br />
+				<br />
+				オブジェクトもnew Object();で宣言していましたが<br />
+				JSONでは中括弧 { }とキー:データで記述できます。<br />
+				var obj = {"fruits1":"みかん","fruits2":"リンゴ"};<br />
+				また、JSONはオブジェクトの中に配列など入れ子にすることも出来ます。<br />
+				var obj = {"fruits":["みかん","リンゴ"]};<br />
+				<div>
+					<h2>ここで<font color="red">練習１を実践</font>　時間は１０分</h2>
+				</div>
+			</p>
+		</div>
+		<div id="sub">
+			<div class="section">
+				<h3>解説 ブラウザのデバックについて</h3>
+				ブラウザのデバック(変数の中身の確認やエラー原因の特定)はjavascriptコンソールを使用します。
+				console.log(変数)を使用します。windowsはF12を押すと開くことができます。
+			</div>
+			<div class="section">
+				<h3>練習１</h3>
+				<br>
+				以下のJavaScriptコードと同じ変数をJSON表記で作成しなさい。</br>
+				確認はconsole.log()を使用して行うこと。</br>
+				var data = new Array();</br>
+				</br>
+				var ary1 = new Array();</br>
+				ary1[0] = "東京";</br>
+				ary1[1] = "神奈川";</br>
+				var obj1 = new Object();</br>
+				obj1.country = "日本";</br>
+				obj1.prefecture = ary1;</br>
+				data[0] = obj1;</br>
+				</br>
+				var ary2 = new Array();</br>
+				ary2[0] = "ニューヨーク";</br>
+				ary2[1] = "ワシントン";</br>
+				var obj2 = new Object();</br>
+				obj2.country = "アメリカ";</br>
+				obj2.prefecture = ary2;</br>
+				data[1] = obj2;</br>
+				<textarea id="practice1" rows="20" cols="84" ></textarea>
+				<br>
+				<div>
+					<input type="button" onClick="practice_build('practice1');" value="スクリプト実行">
+				</div>
+			</div>
+		</div>  
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>

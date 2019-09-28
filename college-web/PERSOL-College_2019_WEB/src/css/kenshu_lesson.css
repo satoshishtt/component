@@ -1,0 +1,20 @@
+/* ========LAYOUT CHANGE======== */
+#sub li a {
+  	display:block;
+	padding:9px 5px;
+}
+ul li {
+    list-style: none;
+}
+label {
+    margin-right: 10px;
+    width:120px;
+    float: left;
+}
+
+.response {
+  overflow: scroll;   /* スクロール表示 */ 
+  width: 610px;
+  height: 200px;
+  background-color: white;
+}
