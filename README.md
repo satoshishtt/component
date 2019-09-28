@@ -1,0 +1,3 @@
+# component
+
+[リンク](./README.md)
