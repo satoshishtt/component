@@ -35,11 +35,16 @@
 			<h4>変数の宣言</h4>
 			<p>
 				プログラミングではデータを保持するために変数を使用します。<br />
-				JavaScriptでは「var」を変数の前に記述し宣言します。<br />
+				数学のxやyのように、値を代入する箱のようなもので<br />
+				変数には名前をつけて値を保持しておけます。<br />
+				JavaScriptでは「var」を変数の前に記述し宣言するが基本です。<br />
 				記述例：<br />
-				var test = "パーソル";
-				<h5>データ型</h4>
-				変数にはデータ型が有りますがJavaScriptでは以下の型を基本的に使います。<br />
+				var test = "パーソル";<br />
+				これはtestの変数にパーソルという文字列を格納しています。
+
+				<h5>データ型</h5>
+				変数にはデータ型が存在します。<br />
+				JavaScriptでは以下の型を基本的に使います。<br />
 				・数値<br />
 				・文字列<br />
 				・論理型<br />
@@ -47,14 +52,17 @@
 				・オブジェクト<br />
 				<font color="red">
 					上記以外に特殊な型としてundefinedがあります。<br />
-					undefinedは定義されていないプロパティを意味します。<br />
+					undefinedは変数宣言したけど入れ物に代入していない場合です<br />
 				</font>
+				記述例：<br />
+				var test;<br />
 			</p>
 			<h4>配列型を作成</h4>
 			<p>
+				配列は同一の型のデータの集まりです。
 				配列型の宣言の仕方は<br />
 				var ary = new Array();で記述します。<br />
-				情報を中に入れる場合は<br />
+				例えば果物情報を配列として中に入れる場合は<br />
 				ary[0] = "みかん";<br />
 				ary[1] = "リンゴ";<br />
 				と記述します。<br />
@@ -69,6 +77,7 @@
 			</p>
 			<h4>オブジェクト型を作成</h4>
 			<p>
+				オブジェクトは配列と似てますが、名前付きでデータを格納できます。
 				オブジェクト型の宣言の仕方は<br />
 				var obj = new Object();で記述します。<br />
 				情報を中に入れる(プロパティを追加する)場合は<br />
@@ -99,7 +108,7 @@
 				また、JSONはオブジェクトの中に配列など入れ子にすることも出来ます。<br />
 				var obj = {"fruits":["みかん","リンゴ"]};<br />
 				<div>
-					<h2>ここで<font color="red">練習１を実践</font>　時間は１０分</h2>
+					<h2>ここで<font color="red">練習１を実践</font>　時間は５分</h2>
 				</div>
 			</p>
 		</div>
@@ -113,24 +122,13 @@
 				<h3>練習１</h3>
 				<br>
 				以下のJavaScriptコードと同じ変数をJSON表記で作成しなさい。</br>
-				確認はconsole.log()を使用して行うこと。</br>
-				var data = new Array();</br>
-				</br>
-				var ary1 = new Array();</br>
-				ary1[0] = "東京";</br>
-				ary1[1] = "神奈川";</br>
-				var obj1 = new Object();</br>
-				obj1.country = "日本";</br>
-				obj1.prefecture = ary1;</br>
-				data[0] = obj1;</br>
-				</br>
-				var ary2 = new Array();</br>
-				ary2[0] = "ニューヨーク";</br>
-				ary2[1] = "ワシントン";</br>
-				var obj2 = new Object();</br>
-				obj2.country = "アメリカ";</br>
-				obj2.prefecture = ary2;</br>
-				data[1] = obj2;</br>
+				確認はconsole.log()を使用してjapanの変数の中身を確認すること。</br>
+				var japan = new Object();</br>
+				japan.country = "日本";</br>
+				var ary = new Array();</br>
+				ary[0] = "東京";</br>
+				ary[1] = "神奈川";</br>
+				japan.prefecture = ary;</br>
 				<textarea id="practice1" rows="20" cols="84" ></textarea>
 				<br>
 				<div>
