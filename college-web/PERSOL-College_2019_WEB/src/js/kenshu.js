@@ -5,6 +5,7 @@ $(function() {
 	// 目次作成
 	$("#subTitle").text("プログラミング基礎講座");
 	var ary1 = [
+		{ file: "lesson1.html", menu: "序章：アプリソースの構造" },
 		{ file: "lesson1.html", menu: "第１章：変数の宣言とJSON表記" },
 		{ file: "lesson2.html", menu: "第２章：関数の宣言" },
 		{ file: "lesson3.html", menu: "第３章：条件分岐とループ処理" },
@@ -26,6 +27,7 @@ $(function() {
 	var selectFile = ary[ary.length - 1];
 	var aryMenu = [
 		{ file: "index.html", menu: "目次" },
+		{ file: "lesson0.html", menu: "アプリソースの構造" },
 		{ file: "lesson1.html", menu: "変数の宣言とJSON表記" },
 		{ file: "lesson2.html", menu: "関数の宣言" },
 		{ file: "lesson3.html", menu: "条件分岐とループ処理" },

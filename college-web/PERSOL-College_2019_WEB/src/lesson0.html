@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
+<link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/kenshu.js"></script>
+<script type="text/javascript">
+/*===　javascript ここにコードを記述　===*/
+</script>
+<title>javascript編</title>
+</head>
+<body>
+<div id="top">
+   <div id="header">
+	  <div id="pr">
+		 <p></p>
+	  </div>
+	</div>
+	<div id="contents">
+		<div id="menu"></div>
+		<div id="main">
+			<h3 id="title"></h3>
+			<img border="0" src="images/ht_1.png" width="600" height="500" alt="ht_1">
+			<br />
+			<br />
+			<h4>押さえるポイント</h4>
+			ここでは各自が今回のアプリをもっと成長させたいと思った時に押さえるべきポイントを紹介します。
+			<br />
+			<br />
+			<p>
+				1.&lt;%= title %&gt;は最終的に表示する時に設定した値に変換され表示する<br />
+			</p>
+			<p>
+				2.HTMLはタグを入れ子にするのが基本構造である<br />
+			</p>
+			<p>
+				3.&lt;script&gt;タグをHTMLの中に記述することでJavaScriptを使用できる<br />
+			</p>
+			<br />			
+		</div>
+		<div id="sub">
+			<div class="section">
+				<h3>解説1</h3>
+				<br />
+				<img border="0" src="images/ht_2.png" width="600" height="500" alt="ht_2">
+				<br />
+				<br />
+				具体的にはindex.jsで記述指定した以下のtitleに設定した値が変換されています。<br />
+				<br />
+				router.get('/', function(req, res, next) {<br />
+					res.render('index', { title: 'chat' });<br />
+				});<br />
+				<br />
+				<h3>解説2</h3>
+				<br />
+				<div id="ex1" style="display:none">
+						&lt;!DOCTYPE html&gt;
+						&lt;html&gt;
+						    &lt;head&gt;
+							    &lt;title&gt;chat&lt;/title&gt;
+						    &lt;/head&gt;
+						    &lt;body&gt;
+							    &lt;div&gt;lesson1&lt;/div&gt;
+							    &lt;div&gt;lesson2&lt;/div&gt;
+						    &lt;/body&gt;
+					&lt;/html&gt;
+				</div>
+				<script type="text/javascript" language="javascript">
+					document.write(html_replace($("#ex1").html()));
+				</script>
+				<p>
+					HTMLを１番上の階層として２番目の階層にHEADとBODYがいます。<br />
+					更に３番目の階層にTITLEとDIVが存在したツリー構造になっていることが<br />
+					わかります。<br />
+				</p>
+				<p>
+					このようにHTMLはタグが入れ子になりで会社組織のような階層構造で作られています。
+				</p>
+				<h3>解説3</h3>
+				<br />
+				&lt;script&gt;<br />
+					$('button').on('click', function() {<br />
+						// ボタンを押された時に動作したい処理を書く<br />
+					});<br />
+				&lt;/script&gt;<br />
+				<br />
+			</div>  
+		</div>  
+		<div id="pageTop">
+			<a href="#">ページのトップへ戻る</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="copyright"></div>
+	</div>
+</div>
+</body>
+</html>
