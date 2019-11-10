@@ -14,7 +14,7 @@ function answer_build_1(elmId) {
 }
 function answer_build_2(elmId) {
 	var sec = "#" + elmId;
-	var str = sec + ' td {width:200px;height:50px;}';
+	var str = sec + '{height:150px;width:200px;}';
 	try {
 		var style = document.createElement('style');
 		style.innerHTML = str;

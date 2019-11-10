@@ -5,8 +5,8 @@ $(function(){
   });
   /* ====解説3の処理======*/
   $("#on_ex2").on({
-    "mouseenter":function(){$("#on_ex2").css("color", "red");},
-    "mouseleave":function(){$("#on_ex2").css("color", "blue");}
+    "mouseover":function(){$("#on_ex2").css("color", "red");},
+    "mouseout":function(){$("#on_ex2").css("color", "blue");}
   });
 
   /* ====実行結果をリセット======*/

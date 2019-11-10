@@ -10,6 +10,11 @@
 <link rel="stylesheet" href="css/common.css" type="text/css" />
 <link rel="stylesheet" href="css/kenshu_layout.css" type="text/css" />
 <link rel="stylesheet" href="css/kenshu_lesson.css" type="text/css" />
+<style>
+.serif-left {
+  background: aquamarine;
+}
+</style>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/kenshu.js"></script>
@@ -31,26 +36,24 @@
 		<div id="main">
 			<h3 id="title"></h3>
 			<p>
-				jQueryとはオープンソースのライブラリで使用すると短くシンプルなプログラムの記述が可能です。<br />
-				2006年にJhon Resigが発表し現在は「jQuery Team」が開発と保守を行っています。<br />
+				jQueryとはオープンソースのライブラリで、使用するとJavaScriptが短くシンプルになります。<br />
 			</p>
 			<div>
 				<h4>使用方法</h4>
 				<p>
-					使用方法は２通りあります。<br />
+					jQueryを使用する方法は２通り<br />
 					一つはサイト<a href="https://jquery.com/download/" target="_blank">https://jquery.com/download/</a>
 					からダウンロードしファイルを配置する方法。<br />
-					もう一つはでURLアドレスで使用する方法。<font color="red">解説１を参照</font><br />
+					もう一つは外部のURLアドレスを記述し使用する方法。<font color="red">解説１を参照</font><br />
 					<h2>記述の仕方</h2>
-					実際にコードを記述するときはjQueryの関数やプロパティが入っているオブジェクトの<br />
-					$()またはjQuery()と記述して処理を書きます。
+					実際にコードを記述するときは$()またはjQuery()と先頭に記述して処理を書きます。
 				</p>
 			</div>
 			<div>
 				<h4>セレクタの使い方</h4>
 				<p>
-					セレクタは任意のエレメントを、DOM ツリーから選び出すための書式です。<br />
-					jQueryのセレクタはCSSセレクタが基本となっていますのですぐわかると思います。<br />
+					セレクタは指定のHTMLを参照します。<br />
+					jQueryのセレクタはCSSセレクタが基本となっています。<br />
 				</p>
 				<h2>基本のセレクタ</h2>
 				<div id="ex1">
@@ -66,12 +69,12 @@
 							<tr id="tr_1">
 								<td id="td_1A" class="abc">.class</td>
 								<td id="td_1B">クラス名を持つ全ての要素を取得</td>
-								<td id="td_1C">$(".abc")</td>
+								<td id="td_1C">$(".serif-left")</td>
 							</tr>
 							<tr id="tr_2">
 								<td id="td_2A"><span>element</span></td>
 								<td id="td_2B">要素名を持つ全ての要素を取得</td>
-								<td id="td_1C">$("span")</td>
+								<td id="td_1C">$("button")</td>
 							</tr>
 							<tr id="tr_3">
 								<td id="td_3A" efg="111">#id</td>
@@ -82,7 +85,7 @@
 					</table>
 				</div>
 				<div id="ex_r1">
-					<h5><font color="red">例題１を参照しセレクタを記述</font></h5>
+					<h5><font color="red">例題１を参照しセレクタを試してみます。</font>text()はhtmlから文章を取得する命令です。</h5>
 					<textarea id="example1" rows="1" cols="84" >$("").text();</textarea>
 					<br>
 					<div>
@@ -94,101 +97,82 @@
 					</br>
 				</div>
 			</div>
+			<h4>イベント処理</h4>
+			ブラウザで表示されたページは「ボタンがクリックされた」「マウスをかざした」など<br />
+			様々な出来事が起こります。これらはプログラミングでは「イベント」と言います。<br />
+			javascriptではこうしたイベントに応じて実行するコードを記述をしていきます。<br />			
+			<h2>代表的なイベント</h2>
 			<div>
-				<h2>属性(attribute)のセレクタ</h2>
-				<div id="ex2">
-					<table class="table">
+					<table>
 						<thead>
 							<tr>
-								<th>セレクタ</th>
-								<th>説明</th>
-								<th>記述例</th>
+								<th>分類</th>
+								<th>イベント名</th>
+								<th>発生タイミング</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>[attribute]</td>
-								<td>指定されたattributeを持つ要素</td>
-								<td>$("[efg]")</td>
+								<td rowspan="2">読み込み</td>
+								<td>load</td>
+								<td>ページ/画像の読み込みが完了した時</td>
 							</tr>
 							<tr>
-								<td>[attribute='value']</td>
-								<td>attributeの値がvalueと一致する要素</td>
-								<td>$("[id=td_1A]")</td>
+								<td>unload</td>
+								<td>ほかのページに移動する時</td>
 							</tr>
+							<tr>
+								<td rowspan="4">マウス</td>
+								<td>click</td>
+								<td>クリック時</td>
+							</tr>
+							<tr>
+								<td>dblclick</td>
+								<td>ダブルクリック時</td>
+							</tr>
+							<tr>
+								<td>mouseover</td>
+								<td>マウスポインタが要素に乗った時</td>
+							</tr>
+							<tr>
+								<td>mouseout</td>
+								<td>マウスポインタが要素から外れた時</td>
+							</tr>
+							<tr>
+								<td rowspan="2">フォーム</td>
+								<td>reset</td>
+								<td>リセットボタンを押した時</td>
+							</tr>
+							<td>submit</td>
+							<td>サブミットボタンを押した時</td>
 						</tbody>
 					</table>
 				</div>
-				<div id="ex_r2">
-					<h5><font color="red">例題１を参照しセレクタを記述</font></h5>
-					<textarea id="example2" rows="1" cols="84" >$("").text();</textarea>
-					<br>
-					<div>
-						<input type="button" onClick="practice_build('example2');" value="スクリプト実行">
-					</div>
-					<div id="example2_result" size="120px">
-						実行結果を表示
-					</div>
-					</br>
-				</div>
-			</div>
-      <h4>イベント処理</h4>
+
+
       <h2>$.on()メソッドによるイベント処理</h2>
       <p>
-        $.on()メソッドを使用した基本的な記述方法は以下のようになります。<br />
+        $.on()メソッドを使用してイベントを記述することができます。<br />
         <b>$('要素').on('イベント名', function(){ 処理 })</b><br />
-        イベントリスナの記述方法に似ているので覚えやすいですね。<br />
-        実際の記述例は解説２のようになります。
+        実際の記述は解説２のようになります。
       </p>
       </p>
       <h5>複数のイベントの記述の仕方</h5>
       <p>
-        onメソッドを使って複数の別々のイベントを設定すると以下のようになります。<br />
-        記述の仕方が少し変わりましたね。<br />
+        複数の別々のイベントを設定することもできます。<br />
         <b>
           $('要素').on({<br />
           'イベント名':function(){ 処理 },<br />
           'イベント名':function(){ 処理 }<br />
         });<br />
         </b>
-        イベントハンドラの時と比べると少しコードの量が減ったことがわかると思います。<br />
-        実際の記述例は解説３を見てみましょう。
       </p>
 			<h4>練習</h4>
 			<form id="form" name="form" action="*" method="post">
-				<h2><font color="red">練習１</font>　時間は５分</h2>
-				<div id="qa1">
-					<ul>
-						<li>
-							<label size="20" for="name">名前</label>：
-							<input type="text" id="name" name="name"value="添付　三朗" size="20">
-						</li>
-						<li>
-							<label for="mail">メールアドレス</label>：
-							<input type="text" id="mail" name="mail" value="saburo.temp@example.com" size="40">
-						</li>
-						<li>
-							<label for="tel">電話番号</label>：
-							<input type="text" id="tel" name="tel" value="09077779999" size="15">
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h5>メールアドレスのラベルテキストを取得しなさい。<font color="red">練習１ HTMLを参照</font></h5>
-					<textarea id="practice1" rows="3" cols="84" ></textarea>
-					<br>
-					<div>
-						<input type="button" onClick="practice_build('practice1');" value="スクリプト実行">
-					</div>
-					<div id="practice1_result" size="120px">
-						実行結果を表示
-					</div>
-					</br>
-				</div>
-        <h2><font color="red">練習2</font>　時間は１０分</h2>
+        <h2><font color="red">練習</font>　時間は１０分</h2>
         <h5>
-          onメソッドを使って以下の文字にマウスポインタが乗ったときに色が変更され、<br />
-          クリックされたときアラートが出る処理を記述しなさい。
+          onメソッドを使って以下の文字にマウスが乗ったときに色が変更され、離れると元に戻り<br />
+          クリックでアラートが出る処理を記述しなさい。
         </h5>
         <br />
         <div id="exercises3">
@@ -196,7 +180,7 @@
         </div>
         <br />
         <p>
-          文字の要素は以下のとおりです。
+          上記のHTMLは以下のとおりです。
           <script type="text/javascript" language="javascript">
             document.write(html_replace($("#exercises3").html()));
           </script>
@@ -217,8 +201,20 @@
 			</div>
 			<div class="section" style="font-size:80%">
 				<h3>例題１ HTML</h3>
+				<div id="tm1">
+					<h1>chat</h1>
+					<p id="title1">Welcome to chat</p>
+					<input type="text" id="message" size="40" maxlength="40">
+					<button>send message</button>
+					<div class="scenery">
+							<img class="faceicon-left" border="0" src="/images/left.gif">
+						<p class="serif-left">Hi, I am John. I am your student today. Talk to you soon!</p>
+					</div>
+				</div>
+				<hr/>
+				上記で表示されているHTML部分
 				<script type="text/javascript" language="javascript">
-					document.write(html_replace($("#ex1").html()));
+					document.write(html_replace($("#tm1").html()));
 				</script>
 			</div>
       <div class="section" style="font-size:80%;">
@@ -240,18 +236,12 @@
         <p>
           &lt;script&gt;<br />
           $("#on_ex2").on({<br />
-            "mouseenter":function(){$("#on_ex2").css("color", "red");},<br />
-            "mouseleave":function(){$("#on_ex2").css("color", "blue");}<br />
+            "mouseover":function(){$("#on_ex2").css("color", "red");},<br />
+            "mouseout":function(){$("#on_ex2").css("color", "blue");}<br />
           });<br />
           &lt;/script&gt;
         </p>
       </div>
-			<div class="section" style="font-size:80%">
-				<h3>練習１ HTML</h3>
-				<script type="text/javascript" language="javascript">
-					document.write(html_replace($("#qa1").html()));
-				</script>
-			</div>
 		</div>
 		<div id="pageTop">
 			<a href="#">ページのトップへ戻る</a>
