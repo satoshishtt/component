@@ -30,7 +30,7 @@
 		<div id="main">
 			<h3 id="title"></h3>
 			<p>
-				関数はJavaScriptの基本的な構成要素のひとつで<br />
+				関数はJavaScriptだけでなくプログラミングをする上で欠かせない<br />
 				タスクや値計算などを実行する文の集まりです。<br />
 			</p>
 			<h4>関数の宣言の仕方</h4>
@@ -44,7 +44,7 @@
 					　　alert("hello!");<br />
 				}<br />
 				記述例２：引数あり<br />
-				function sample(year, month) {<br />
+				function sample2(year, month) {<br />
 					　　return year + ":" + month;<br />
 				}<br />
 			</p>
@@ -52,9 +52,8 @@
 			<div>
 				<p>
 					関数の呼び出しは名前に()を付けて呼び出します。<br />
-					記述例：</br>
-					sample();</br>
-					実際に記述例１を宣言して呼び出してみましょう。</br>
+					記述例：sample();</br>
+					実際に記述例１を宣言してそのあとに呼び出してみましょう。</br>
 				</p>
 				<textarea id="example1" rows="6" cols="84" ></textarea>
 				<br>
@@ -74,11 +73,11 @@
 				</div>
 				</br>
 			</div>
-			<h4>無名関数と呼び出し</h4>
+			<h4>無名関数</h4>
 			<div>
 				<p>
-					名前を付けない関数を無名関数と呼びます。</br>
-					名前を付けずに、関数を変数に代入し使用することができます。</br>
+					functionの後ろに名前を付けない関数を無名関数と呼びます。</br>
+					その場合は変数に代入し使用することができます。</br>
 					記述例：<br />
 					var example = function () {<br />
 					　　alert("thank you!");<br />
@@ -99,8 +98,8 @@
 			<div class="section">
 				<h3>練習１</h3>
 				<br>
-				function関数の名前が一緒な関数を宣言し後に記述された方が有効かを確かめなさい。</br>
-				条件：実行はalert()を使用する</br>
+				名前が一緒な関数を２つ宣言し後に記述された方が有効かを確かめなさい。</br>
+				条件：一つ目の関数にはalert(1);の処理を記述し二つ目の関数にはalert(2);を記述する。</br>
 				<textarea id="practice1" rows="12" cols="84" ></textarea>
 				<br>
 				<div>
