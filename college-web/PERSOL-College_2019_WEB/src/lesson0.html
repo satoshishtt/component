@@ -32,45 +32,60 @@
 			<img border="0" src="images/ht_1.png" width="600" height="500" alt="ht_1">
 			<br />
 			<br />
+			<h4>HTML</h4>
+			HTMLは、画像や文字をブラウザに表示したり、URLのリンクでページを移動できます。	<br />
+			JavaScriptを学習する上でHTMLは一緒に覚えて行くことになります。<br />
+			ここでは基本的な構造を押さえて起きましょう。<font color="red">解説１を参照</font><br />
+			<br />
+			<br />
 			<h4>押さえるポイント</h4>
-			ここでは各自が今回のアプリをもっと成長させたいと思った時に押さえるべきポイントを紹介します。
+			ここでは各自が今回のアプリをもっと発展させたいと思った時に押さえるポイントを理解します。
 			<br />
 			<br />
 			<p>
-				1.&lt;%= title %&gt;は最終的に表示する時に設定した値に変換され表示する<br />
+				1.htmlに記述した&lt;%= title %&gt;は最終的に表示する時に設定した値に変換され表示する<br />
+				具体的にはサーバー処理であるindex.jsで記述指定した以下のtitleに<br />
+				設定した 'chat'が変換されブラウザに表示されています。<br />
+				---------------------------------------------<br />
+				index.jsを抜粋<br />
+				router.get('/', function(req, res, next) {<br />
+					&nbsp;&nbsp;res.render('index', { title: 'chat' });<br />
+				});<br />
+				---------------------------------------------<br />
+				※拡張子を「ejs」することでサーバーサイドから情報を受け取れるようになります。<br />
+				<br />				
 			</p>
 			<p>
-				2.HTMLはタグを入れ子にするのが基本構造である<br />
-			</p>
-			<p>
-				3.&lt;script&gt;タグをHTMLの中に記述することでJavaScriptを使用できる<br />
+				2.&lt;script&gt;タグをHTMLの中に記述することでJavaScriptで処理を行うことができる<br />
+				---------------------------------------------<br />
+				&lt;script&gt;<br />
+					$('button').on('click', function() {<br />
+						&nbsp;&nbsp;// ボタンを押された時に動作したい処理を書く<br />
+					});<br />
+				&lt;/script&gt;<br />
+				---------------------------------------------<br />
 			</p>
 			<br />			
 		</div>
 		<div id="sub">
 			<div class="section">
-				<h3>解説1</h3>
+				<h3>ブラウザで解釈されたHTML</h3>
 				<br />
 				<img border="0" src="images/ht_2.png" width="600" height="500" alt="ht_2">
 				<br />
 				<br />
-				具体的にはindex.jsで記述指定した以下のtitleに設定した値が変換されています。<br />
+				<h3>解説1</h3>
 				<br />
-				router.get('/', function(req, res, next) {<br />
-					res.render('index', { title: 'chat' });<br />
-				});<br />
-				<br />
-				<h3>解説2</h3>
-				<br />
+				HTMLの基本構造
 				<div id="ex1" style="display:none">
 						&lt;!DOCTYPE html&gt;
 						&lt;html&gt;
 						    &lt;head&gt;
 							    &lt;title&gt;chat&lt;/title&gt;
 						    &lt;/head&gt;
-						    &lt;body&gt;
-							    &lt;div&gt;lesson1&lt;/div&gt;
-							    &lt;div&gt;lesson2&lt;/div&gt;
+							&lt;body&gt;
+								&lt;h1&gt;chat&lt;/h1&gt;
+								&lt;p&gt;Welcome to chat&lt;/p&gt;							
 						    &lt;/body&gt;
 					&lt;/html&gt;
 				</div>
@@ -78,21 +93,12 @@
 					document.write(html_replace($("#ex1").html()));
 				</script>
 				<p>
-					HTMLを１番上の階層として２番目の階層にHEADとBODYがいます。<br />
-					更に３番目の階層にTITLEとDIVが存在したツリー構造になっていることが<br />
-					わかります。<br />
+					&lt;html&gt;を１番上の階層として２番目の階層に&lt;head&gt;と&lt;body&gt;がいます。<br />
+					更に３番目の階層に&lt;title&gt;と&lt;h1&gt;などが存在したツリー構造になっています<br />
 				</p>
 				<p>
-					このようにHTMLはタグが入れ子になりで会社組織のような階層構造で作られています。
+					このように&lt;html&gt;はタグが入れ子になりで組織のような階層構造が形成されます。
 				</p>
-				<h3>解説3</h3>
-				<br />
-				&lt;script&gt;<br />
-					$('button').on('click', function() {<br />
-						// ボタンを押された時に動作したい処理を書く<br />
-					});<br />
-				&lt;/script&gt;<br />
-				<br />
 			</div>  
 		</div>  
 		<div id="pageTop">
